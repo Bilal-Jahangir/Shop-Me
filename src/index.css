@@ -1,0 +1,34 @@
+/* src/index.css */
+@import 'tailwindcss'; /* This replaces @tailwind base, components, utilities */
+
+@theme {
+  --color-primary: #4263eb;
+  --color-secondary: #63e6be;
+  --container-padding-default: 1rem;
+  --container-padding-lg: 2rem; 
+}
+.container {
+  max-width: 100%; 
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding-default);
+  padding-right: var(--container-padding-default);
+
+  /* Responsive container padding */
+  @media (min-width: 1024px) {
+    padding-left: var(--container-padding-lg);
+    padding-right: var(--container-padding-lg);
+  }
+}
+
+/* Use your custom colors as utility classes */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+/* Example of using container */
+/* In your HTML: <div class="container">...</div> */
