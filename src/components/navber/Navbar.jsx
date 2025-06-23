@@ -66,8 +66,57 @@ function Navbar({ handleOrderPopUp }) {
                     <IoMdSearch className="txet-slate-800 group-hover:text-primary 
                     absolute top-1/2 -translate-y-1/2 right-3"/>
                 </div>
+                    <button
+                    onClick={handleOrderPopUp}
+                    className="bg-gradient-to-t from-primary to bg-secondary
+                    transition-all duration-200 text-white py-1 px-4
+                    rounded-full flex items-center gap-3 group">
+                      <span className="group-hover:block hidden
+                       transition-all duration-200">
+                        Order
+                      </span>
+                      <FaCartShopping className="text-xl text-white 
+                      drop-shadow-sm cursor-pointer"/> 
+                    </button>
+                    {/* <div>darkmode</div> */}
             </div>
         </div>
+      </div>
+      <div data-aos='zoom-in' className="flex justify-center ">
+        <ul className="sm:flex hidden items-center gap-4">
+          {menu.map((data)=>(
+            <li
+            key={data.id}
+            >
+              <a href={data.link} 
+              className="inline-block px-4 hover:text-primary duration-200">
+                {data.name}
+              </a>
+            </li>
+          ))}
+          <li className="group relative cursor-pointer">
+            <a href="#" className="flex items-center gap-[2px] py-2">
+              Trending Products
+              <span>
+                <FaCaretDown 
+                className="transition-all duration-200 group-hover:rotate-180"/>
+              </span>
+            </a>
+            <div className="absolute z-[9999] hidden group-hover:block w-[200px]
+            rounded-md bg-white p-2 text-black shadow-md">
+              <ul>
+                {dropDownList.map((data)=>(
+                  <li key={data.id}>
+                    <a href={data.links}
+                    className="inline-block w-full rounded-md py-2 text-black hover:bg-primary/20">
+                      {data.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   );
