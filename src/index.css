@@ -1,12 +1,4 @@
-/* src/index.css */
 @import "tailwindcss";
-
-/* This configures dark mode to be class-based */
-@custom-variant dark (&:where(.dark, .dark *));
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @theme {
   --color-primary: #4263eb;
@@ -14,6 +6,7 @@
   --container-padding-default: 1rem;
   --container-padding-lg: 2rem; 
 }
+
 .container {
   max-width: 100%; 
   margin-left: auto;
@@ -27,15 +20,3 @@
     padding-right: var(--container-padding-lg);
   }
 }
-
-/* Use your custom colors as utility classes */
-.text-primary {
-  color: var(--color-primary);
-}
-
-.bg-secondary {
-  background-color: var(--color-secondary);
-}
-
-/* Example of using container */
-/* In your HTML: <div class="container">...</div> */
